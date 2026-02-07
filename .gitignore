@@ -1,0 +1,14 @@
+# Системные файлы Mac
+.DS_Store
+
+# Зависимости
+node_modules/
+package-lock.json
+
+# Секреты 
+.env
+*.key
+
+# Логи и временные файлы
+npm-debug.log*
+.vscode/
