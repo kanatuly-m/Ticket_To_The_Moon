@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket to the Moon - Blockchain Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <header>
+        <div class="logo-container">
+            <div class="moon-icon">🌑</div>
+            <h1>Ticket to the Moon</h1>
+        </div>
+        
+        <div class="wallet-controls">
+            <div id="network-status" class="network-badge offline">
+                <span class="dot"></span> <span id="network-name">Not Connected</span>
+            </div>
+            <button id="connect-wallet-btn" class="btn btn-connect">
+                <i class="fas fa-wallet"></i> Connect Wallet
+            </button>
+            <span id="user-address" class="address-display hidden">0x...</span>
+        </div>
+    </header>
+
+    <main class="dashboard-grid">
+
+        <section class="card user-stats">
+            <h2><i class="fas fa-user-astronaut"></i> Commander Profile</h2>
+            <div class="balance-container">
+                <div class="balance-item">
+                    <span class="label">ETH Balance</span>
+                    <span id="eth-balance" class="value">0.0000</span>
+                    <span class="unit">ETH</span>
+                </div>
+                <div class="balance-item">
+                    <span class="label">MoonTokens (Reward)</span>
+                    <span id="token-balance" class="value">0.00</span>
+                    <span class="unit">MNM</span>
+                </div>
+            </div>
+            <div id="status-message" class="status-box">
+                Ready to launch. Connect wallet to begin.
+            </div>
+        </section>
+
+        <section class="card mission-control">
+            <div class="moon-visual-placeholder">
+                <div class="moon-circle">
+                    
+                </div>
+            </div>
+            
+            <div class="mission-details">
+                <h2 id="campaign-title">Loading Mission...</h2>
+                <div class="progress-bar-container">
+                    <div id="funding-progress" class="progress-bar" style="width: 0%;"></div>
+                </div>
+                <p>Goal: <span id="campaign-goal">0</span> ETH | Raised: <span id="campaign-raised">0</span> ETH</p>
+                <p class="timer">Time Left: <span id="time-left">00:00:00</span></p>
+
+                <div class="action-buttons">
+                    <button id="btn-ticket-standard" class="btn btn-primary">
+                        Buy Standard Ticket <br><small>(0.01 ETH)</small>
+                    </button>
+                    <button id="btn-ticket-vip" class="btn btn-gold">
+                        Buy VIP Ticket <br><small>(0.1 ETH)</small>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="card launchpad">
+            <h2><i class="fas fa-rocket"></i> Launch New Mission</h2>
+            <form id="create-campaign-form">
+                <div class="input-group">
+                    <label>Mission Name</label>
+                    <input type="text" id="new-title" placeholder="e.g. Apollo 19" required>
+                </div>
+                <div class="input-group">
+                    <label>Funding Goal (ETH)</label>
+                    <input type="number" id="new-goal" step="0.01" placeholder="10.0" required>
+                </div>
+                <div class="input-group">
+                    <label>Duration (Minutes)</label>
+                    <input type="number" id="new-duration" placeholder="60" required>
+                </div>
+                <button type="submit" class="btn btn-secondary">Initialize Launch</button>
+            </form>
+        </section>
+
+        <section class="card queue-system">
+            <h2><i class="fas fa-list-ol"></i> Priority Queue</h2>
+            <p class="subtext">First in line gets the seat.</p>
+            
+            <table class="queue-table">
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Astronaut (Address)</th>
+                        <th>Ticket Type</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="queue-list">
+                    <tr>
+                        <td>1</td>
+                        <td>0x123...456</td>
+                        <td class="vip">VIP (0.1)</td>
+                        <td>12:01:05</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>0xABC...DEF</td>
+                        <td>Standard</td>
+                        <td>12:02:10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Blockchain Final Project | Team Ticket to the Moon</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
